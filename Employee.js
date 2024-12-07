@@ -87,7 +87,7 @@ console.log(`\nTotal Monthly Wage for 20 Working Days: $${totalWage}`);
 
 // UC5 - Calculate Total Wage with Max Hours or Max Days Logic
 
-const MAX_HOURS = 100;  // Max work hours in a month
+const MAX_HOURS = 160;  // Max work hours in a month
 const MAX_DAYS = 20;    // Max working days in a month
 
 let totalHoursWorked = 0;
