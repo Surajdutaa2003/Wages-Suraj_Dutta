@@ -57,8 +57,8 @@ function getWorkHours() {
     }
 }
 
-const hoursWorked = getWorkHours();
-let dailyWage = hoursWorked * HOURLY_WAGE;
+let hoursWorked = getWorkHours();
+dailyWage = hoursWorked * HOURLY_WAGE;
 
 if (hoursWorked === 0) {
     console.log("No Work: Employee is absent today");
@@ -70,11 +70,11 @@ if (hoursWorked === 0) {
 
 const WORKING_DAYS = 20;
 
-let totalWage = 0;
+totalWage = 0;
 
 for (let day = 1; day <= WORKING_DAYS; day++) {
-    const hoursWorked = getWorkHours();
-    let dailyWage = hoursWorked * HOURLY_WAGE;
+    hoursWorked = getWorkHours();
+    dailyWage = hoursWorked * HOURLY_WAGE;
     totalWage += dailyWage;
     if (hoursWorked === 0) {
         console.log(`Day ${day}: Absent`);
@@ -91,15 +91,15 @@ const MAX_HOURS = 100;  // Max work hours in a month
 const MAX_DAYS = 20;    // Max working days in a month
 
 let totalHoursWorked = 0;
-let totalWorkingDays = 0;
+totalWorkingDays = 0;
 let totalMonthlyWage = 0;
 
 while (totalHoursWorked < MAX_HOURS && totalWorkingDays < MAX_DAYS) {
     totalWorkingDays++;
-    const hoursWorked = getWorkHours();
+    hoursWorked = getWorkHours();
     if (totalHoursWorked + hoursWorked <= MAX_HOURS) {
         totalHoursWorked += hoursWorked;
-        let dailyWage = hoursWorked * HOURLY_WAGE;
+        dailyWage = hoursWorked * HOURLY_WAGE;
         totalMonthlyWage += dailyWage;
         console.log(`Day ${totalWorkingDays}: Worked ${hoursWorked} hours, Daily Wage: $${dailyWage}`);
     } else {
