@@ -19,31 +19,28 @@ const HOURLY_WAGE = 20;  // Hourly Wage
 const PART_TIME_HOURS = 4;  // Part-time work hours
 const FULL_TIME_HOURS = 8;  // Full-time work hours
 
-let workType = Math.floor(Math.random() * 3);  // Randomly choose: 0, 1, or 2
-
-let dailyWage;
-
-switch (workType) {
-    case PART_TIME:
-        dailyWage = PART_TIME_HOURS * HOURLY_WAGE;
-        console.log(`Part Time: Worked ${PART_TIME_HOURS} hours, Daily Wage: $${dailyWage}`);
-        break;
-    case FULL_TIME:
-        dailyWage = FULL_TIME_HOURS * HOURLY_WAGE;
-        console.log(`Full Time: Worked ${FULL_TIME_HOURS} hours, Daily Wage: $${dailyWage}`);
-        break;
-    case NO_TIME:
-        dailyWage = 0;
-        console.log("No Work: Employee is absent today");
-        break;
-    default:
-        console.log("Invalid input");
+let dailyWage = 0;
+if (employeeStatus === IS_PRESENT) {
+    let workType = Math.floor(Math.random() * 3);  // Randomly choose: 0, 1, or 2
+    switch (workType) {
+        case PART_TIME:
+            dailyWage = PART_TIME_HOURS * HOURLY_WAGE;
+            console.log(`Part Time: Worked ${PART_TIME_HOURS} hours, Daily Wage: $${dailyWage}`);
+            break;
+        case FULL_TIME:
+            dailyWage = FULL_TIME_HOURS * HOURLY_WAGE;
+            console.log(`Full Time: Worked ${FULL_TIME_HOURS} hours, Daily Wage: $${dailyWage}`);
+            break;
+        case NO_TIME:
+            dailyWage = 0;
+            console.log("No Work: Employee is absent today");
+            break;
+        default:
+            console.log("Invalid input");
+    }
 }
 
 // UC3 - Refactor to Write a Function to Get Work Hours
-
-const PART_TIME_HOURS = 4;
-const FULL_TIME_HOURS = 8;
 
 // Function to get work hours
 function getWorkHours() {
@@ -60,11 +57,15 @@ function getWorkHours() {
     }
 }
 
-const hoursWorked = getWorkHours();
-let dailyWage = hoursWorked * HOURLY_WAGE;
+if (employeeStatus === IS_PRESENT) {
+    let hoursWorked = getWorkHours();
+    dailyWage = hoursWorked * HOURLY_WAGE;
 
-if (hoursWorked === 0) {
-    console.log("No Work: Employee is absent today");
+    if (hoursWorked === 0) {
+        console.log("No Work: Employee is absent today");
+    } else {
+        console.log(`Worked ${hoursWorked} hours, Daily Wage: $${dailyWage}`);
+    }
 } else {
-    console.log(`Worked ${hoursWorked} hours, Daily Wage: $${dailyWage}`);
+    console.log("Employee is Absent");
 }
