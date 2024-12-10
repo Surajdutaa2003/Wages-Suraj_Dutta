@@ -121,16 +121,16 @@ function calculateTotalWageWithMaxHours() {
 // Main Execution
 let employeeStatus = Math.floor(Math.random() * 2); // Randomly decide if employee is present or absent
 
-// UC1: Check if employee is present once at the start
+// UC1 to UC3: Check if employee is present once at the start
 if (performWorkTasks(employeeStatus)) {
     console.log("UC1: Employee is Present");
 
-    let workType = Math.floor(Math.random() * 3); // Randomly decide work type for UC2
+    let workType = Math.floor(Math.random() * 3); // Randomly decide work type for UC2 and UC3
 
-    // UC2: Calculate daily wage
+    // UC2
     calculateDailyWage(workType);
 
-    // UC3: Calculate hours worked
+    // UC3
     let hoursWorked = getWorkHours(workType);
     if (hoursWorked === 0) {
         console.log("UC3: Employee did not work today.");
@@ -138,12 +138,12 @@ if (performWorkTasks(employeeStatus)) {
         console.log(`UC3: Worked ${hoursWorked} hours.`);
     }
 
-    // UC4: Calculate Monthly Wage
-    calculateMonthlyWage();
-
-    // UC5: Calculate Total Wage with Max Hours
-    calculateTotalWageWithMaxHours();
-
 } else {
     console.log("UC1: Employee is Absent. No work performed today.");
 }
+
+// UC4: Calculate Monthly Wage
+calculateMonthlyWage();
+
+// UC5: Calculate Total Wage with Max Hours
+calculateTotalWageWithMaxHours();
