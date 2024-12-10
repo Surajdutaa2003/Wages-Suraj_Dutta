@@ -70,26 +70,8 @@ if (employeeStatus === IS_PRESENT) {
     console.log("Employee is Absent");
 }
 
-
-// UC3 - Refactor to Write a Function to Get Work Hours
-
-// Function to get work hours
-function getWorkHours() {
-    let workType = Math.floor(Math.random() * 3);  // Randomly choose: 0, 1, or 2
-    switch (workType) {
-        case PART_TIME:
-            return PART_TIME_HOURS;  // Part-time
-        case FULL_TIME:
-            return FULL_TIME_HOURS;  // Full-time
-        case NO_TIME:
-            return 0;  // No work
-        default:
-            return 0;
-    }
-}
-
 const hoursWorked = getWorkHours();
-let dailyWage = hoursWorked * HOURLY_WAGE;
+dailyWage = hoursWorked * HOURLY_WAGE;
 
 if (hoursWorked === 0) {
     console.log("No Work: Employee is absent today");
@@ -97,10 +79,26 @@ if (hoursWorked === 0) {
     console.log(`Worked ${hoursWorked} hours, Daily Wage: $${dailyWage}`);
 }
 
+/*HOURLY_WAGE = 20;
+PART_TIME_HOURS = 4;
+FULL_TIME_HOURS = 8;*/
+
+const WORKING_DAYS = 20; // For UC4
+const MAX_HOURS = 160;   // For UC5
+const MAX_DAYS = 20;     // For UC5
+
+// Function to determine work hours
+function getWorkHours() {
+    let workType = Math.floor(Math.random() * 3); // Randomly choose 0, 1, or 2
+    switch (workType) {
+        case 1: return PART_TIME_HOURS; // Part-time
+        case 2: return FULL_TIME_HOURS; // Full-time
+        default: return 0;              // Absent
+    }
+}
+
 // UC4 - Calculate Monthly Wage Assuming 20 Working Days
-
-const WORKING_DAYS = 20;
-
+console.log("UC4: Monthly Wage Calculation for 20 Days");
 let totalWage = 0;
 
 for (let day = 1; day <= WORKING_DAYS; day++) {
@@ -114,6 +112,6 @@ for (let day = 1; day <= WORKING_DAYS; day++) {
     }
 }
 
-console.log(`\nTotal Monthly Wage for 20 Working Days: $${totalWage}`);
+console.log(`\nTotal Monthly Wage for 20 Working Days: $${totalWage}\n`);
 
 
