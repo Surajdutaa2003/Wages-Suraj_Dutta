@@ -33,6 +33,7 @@ function calculateDailyWage(workType) {
             console.log("UC2: Invalid input");
     }
 
+    
     return dailyWage;
 }
 
