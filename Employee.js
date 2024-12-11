@@ -46,7 +46,7 @@ function getWorkHours(workType) {
         case NO_TIME:
             return 0; // No work
         default:
-            return 0;
+            return 0; 
     }
 }
 
