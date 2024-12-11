@@ -14,6 +14,7 @@ const MAX_HOURS = 160;
 // Function to check if the employee is present
 function performWorkTasks(employeeStatus) {
     return employeeStatus === IS_PRESENT;
+    
 }
 
 // Function to calculate daily wage based on work type
