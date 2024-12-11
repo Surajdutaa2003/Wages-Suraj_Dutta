@@ -47,7 +47,7 @@ function getWorkHours(workType) {
             return FULL_TIME_HOURS; // Full-time
         case NO_TIME:
             return 0; // No work
-        default:
+        default:   
             return 0;
     }
 }
