@@ -1,5 +1,7 @@
 # Employee Wage Management System
 
+
+
 This repository contains the implementation of various use cases for an Employee Wage Management System. The use cases include:
 
 1. UC1: Check if Employee is Present or Absent.
