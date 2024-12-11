@@ -9,6 +9,7 @@ function performWorkTasks(employeeStatus) {
 
 // Main Execution
 let employeeStatus = Math.floor(Math.random() * 2); 
+
 // Randomly decide if employee is present or absent
 
 // UC1: Check if employee is present once at the start
