@@ -6,9 +6,10 @@ const FULL_TIME = 2;   // Full-Time
 const NO_TIME = 0;     // No Work
 const HOURLY_WAGE = 20;  // Hourly Wage
 const PART_TIME_HOURS = 4;  // Part-time work hours
-const FULL_TIME_HOURS = 8;  // Full-time work hours
-const WORKING_DAYS = 20;  // Assuming 20 working days in a month
-const MAX_HOURS = 160;  // Max work hours in a month
+const FULL_TIME_HOURS = 8; 
+ 
+const WORKING_DAYS = 20;  
+const MAX_HOURS = 160;  
 
 // Function to check if the employee is present
 function performWorkTasks(employeeStatus) {
